@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   client.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ttachi <ttachi@student.42tokyo.ja>         +#+  +:+       +#+        */
+/*   By: ttachi <ttachi@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 12:35:12 by ttachi            #+#    #+#             */
-/*   Updated: 2023/05/07 09:09:40 by ttachi           ###   ########.fr       */
+/*   Updated: 2023/05/07 10:32:20 by ttachi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 static void	send_bit(char c, pid_t pid)
 {
-	unsigned int	count;
-	int				error_check;
+	size_t	count;
+	int		error_check;
 
 	count = 0;
 	while (count < 8)
 	{
-		usleep(50);
+		usleep(350);
 		if (c % 2 == 1)
 			error_check = kill(pid, SIGUSR1);
 		else
@@ -36,16 +36,16 @@ int	main(int argc, char *argv[])
 {
 	pid_t	pid;
 	int		i;
-	char	send_char;
 
 	if (argc != 3)
 		exit(1);
 	pid = ft_atoi(argv[1]);
+	if (pid < 1)
+		exit(1);
 	i = 0;
 	while (argv[2][i] != '\0')
 	{
-		send_char = argv[2][i];
-		send_bit(send_char, pid);
+		send_bit(argv[2][i], pid);
 		i++;
 	}
 	return (0);
