@@ -6,12 +6,12 @@
 #    By: ttachi <ttachi@student.42tokyo.jp>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/29 07:12:51 by ttachi            #+#    #+#              #
-#    Updated: 2023/05/06 22:08:17 by ttachi           ###   ########.fr        #
+#    Updated: 2023/05/07 15:33:42 by ttachi           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = minitalk
-CC = CC
+CC = cc
 CFLAGS = -Wall -Werror -Wextra
 LIBFT = libft/libft.a
 
