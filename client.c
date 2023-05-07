@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   client.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ttachi <ttachi@student.42tokyo.jp>         +#+  +:+       +#+        */
+/*   By: ttachi <ttachi@student.42tokyo.ja>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 12:35:12 by ttachi            #+#    #+#             */
-/*   Updated: 2023/05/06 23:20:08 by ttachi           ###   ########.fr       */
+/*   Updated: 2023/05/07 09:09:40 by ttachi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,9 @@ static void	send_bit(char c, pid_t pid)
 
 int	main(int argc, char *argv[])
 {
-	pid_t			pid;
-	int				i;
-	unsigned char	send_char;
+	pid_t	pid;
+	int		i;
+	char	send_char;
 
 	if (argc != 3)
 		exit(1);

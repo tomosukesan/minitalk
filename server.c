@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   server.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ttachi <ttachi@student.42tokyo.jp>         +#+  +:+       +#+        */
+/*   By: ttachi <ttachi@student.42tokyo.ja>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 07:03:55 by ttachi            #+#    #+#             */
-/*   Updated: 2023/05/06 23:18:50 by ttachi           ###   ########.fr       */
+/*   Updated: 2023/05/07 09:07:51 by ttachi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,13 @@ static void	restore_data(int signum)
 	if (g_sig_data.pos != 0)
 		binary = binary << g_sig_data.pos;
 	g_sig_data.conv = g_sig_data.conv | binary;
-	g_sig_data.pos++;
-	if (g_sig_data.pos == 8)
+	if (g_sig_data.pos == 7)
 	{
 		ft_putchar_fd(g_sig_data.conv, 1);
 		g_sig_data.conv = 0;
 		g_sig_data.pos = 0;
 	}
+	g_sig_data.pos++;
 }
 
 int	main(void)
